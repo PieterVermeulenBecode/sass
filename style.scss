@@ -1,10 +1,3 @@
-@mixin box-shadow($shadow:10px 10px 19px -4px rgba(255, 255, 255, 0.75)){
-  -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
-  box-shadow: $shadow;
-}
-$padd:16px;
-$marg:16px;
 body {
   font: 100% "Space Mono", monospace;
   color: #2748b3;
@@ -28,7 +21,6 @@ body {
   background-attachment: fixed;
 }
 
-
 article {
     display: flex;
     flex-wrap: wrap;
@@ -37,9 +29,11 @@ article {
     flex-grow: 1;
     flex-basis: 45%;
     border: 1px silver solid;
-    @include box-shadow;
-    padding: $padd;
-    margin: $marg;
+    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    padding: 16px;
+    margin: 16px;
     clear: both;
     overflow: auto;
     box-sizing: border-box;
@@ -61,7 +55,7 @@ article {
     margin-bottom: 1.6em;
     max-width: 100%;
     overflow: auto;
-    padding: $padd;
+    padding: 16px;
     display: block;
     white-space: pre-wrap;
       &:before{
@@ -74,43 +68,42 @@ article {
       }
   }
 }
-
-h2{
+h1,
+h2,
+h6 {
   color: #6b8eff;
 }
 
 h1 {
-  @extend h2;
   text-align: center;
 }
 
 h6 {
-  @extend h2;
   text-align: center;
   font-size: 2em;
-  padding: 2*$padd;
+  padding: 32px;
   margin-bottom: 0px;
 }
 
-.message {
+.message,
+.success,
+.error,
+.warning {
   border: 1px solid #ccc;
-  padding: $padd;
-  margin: $marg;
+  padding: 16px;
+  margin: 16px;
   color: #2748b3;
   background-color: #000;
 }
 
 .success {
-  @extend .message;
   background-color: green;
 }
 
 .error {
-  @extend .message;
   background-color: red;
 }
 
 .warning {
-  @extend .message;
   background-color: orange;
 }
