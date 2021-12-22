@@ -74,27 +74,25 @@ article {
       }
   }
 }
-h1,
-h2,
-h6 {
+
+h2{
   color: #6b8eff;
 }
 
 h1 {
+  @extend h2;
   text-align: center;
 }
 
 h6 {
+  @extend h2;
   text-align: center;
   font-size: 2em;
   padding: 2*$padd;
   margin-bottom: 0px;
 }
 
-.message,
-.success,
-.error,
-.warning {
+.message {
   border: 1px solid #ccc;
   padding: $padd;
   margin: $marg;
@@ -103,13 +101,16 @@ h6 {
 }
 
 .success {
+  @extend .message;
   background-color: green;
 }
 
 .error {
+  @extend .message;
   background-color: red;
 }
 
 .warning {
+  @extend .message;
   background-color: orange;
 }
